@@ -35,11 +35,15 @@
       }
 
       function gtmDataLayer() {
-        dataLayer.push("send", "event", {
-          eventCategory: "ConnectListingTool - DATALAYER",
-          eventAction: "Click",
-          eventLabel: "ChannelAdvisor - DATALAYER",
-        });
+        dataLayer.push([
+          "send",
+          "event",
+          {
+            eventCategory: "ConnectListingTool - DATALAYER",
+            eventAction: "Click",
+            eventLabel: "ChannelAdvisor - DATALAYER",
+          },
+        ]);
         console.log("GTM PUSH FIRED");
       }
     </script>
