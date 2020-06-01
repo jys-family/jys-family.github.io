@@ -35,17 +35,21 @@
       }
 
       function gtmDataLayer() {
-        dataLayer.push([
-          "send",
-          "event",
-          {
-            eventCategory: "ConnectListingTool - DATALAYER",
-            eventAction: "Click",
-            eventLabel: "ChannelAdvisor - DATALAYER",
-          },
-        ]);
+        gtag("send", "event", {
+          eventCategory: "ConnectListingTool - DATALAYER",
+          eventAction: "Click",
+          eventLabel: "ChannelAdvisor - DATALAYER",
+        });
         console.log("GTM PUSH FIRED");
       }
+
+      function gtag() {
+        console.log("gtag called with", arguments);
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "UA-167593319-1");
     </script>
     <!-- Google Tag Manager (noscript) -->
     <noscript
